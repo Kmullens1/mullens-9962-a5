@@ -31,6 +31,9 @@ public class InventoryTrackerController {
     @FXML
     private TextField nameSearch;
 
+    public InventoryTrackerController() {
+    }
+
     @FXML
     void addItemButtonPressed(ActionEvent event) {
 

@@ -8,26 +8,26 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.InventoryTracker">
    <children>
-      <TableView layoutY="102.0" prefHeight="218.0" prefWidth="600.0">
+      <TableView fx:id="inventory" layoutY="102.0" prefHeight="218.0" prefWidth="600.0">
         <columns>
           <TableColumn prefWidth="125.0" text="Serial Number" />
           <TableColumn prefWidth="325.0" text="Item" />
             <TableColumn prefWidth="150.0" text="Monetary Value (USD)" />
         </columns>
       </TableView>
-      <Button layoutY="76.0" mnemonicParsing="false" text="Add Item" />
-      <Button layoutX="72.0" layoutY="76.0" mnemonicParsing="false" text="Remove Item" />
-      <Button layoutX="500.0" layoutY="76.0" mnemonicParsing="false" text="Delete All Items" />
-      <Button layoutX="139.0" layoutY="320.0" mnemonicParsing="false" text="Edit Item" />
-      <Button layoutY="320.0" mnemonicParsing="false" text="Edit Serial Number" />
-      <Button layoutX="458.0" layoutY="320.0" mnemonicParsing="false" text="Edit Monetary Value" />
-      <Button layoutY="8.0" mnemonicParsing="false" text="Save" />
+      <Button layoutY="76.0" mnemonicParsing="false" onAction="#addItemButtonPressed" text="Add Item" />
+      <Button layoutX="72.0" layoutY="76.0" mnemonicParsing="false" onAction="#removeItemButtonPressed" text="Remove Item" />
+      <Button layoutX="500.0" layoutY="76.0" mnemonicParsing="false" onAction="#deleteAllItemsButtonPressed" text="Delete All Items" />
+      <Button layoutX="139.0" layoutY="320.0" mnemonicParsing="false" onAction="#editItemButtonPressed" text="Edit Item" />
+      <Button layoutY="320.0" mnemonicParsing="false" onAction="#editSerialNumberButtonPressed" text="Edit Serial Number" />
+      <Button layoutX="458.0" layoutY="320.0" mnemonicParsing="false" onAction="#editMonetaryValueButtonPressed" text="Edit Monetary Value" />
+      <Button layoutY="8.0" mnemonicParsing="false" onAction="#saveButtonPressed" text="Save" />
       <TextField fx:id="fileLocation" layoutX="48.0" layoutY="27.0" prefHeight="26.0" prefWidth="462.0" promptText="Enter address of desired file location including file format (TSV, HTML or JSON)." />
-      <TextField layoutX="64.0" layoutY="362.0" prefHeight="26.0" prefWidth="186.0" promptText="Search by Item Serial Number" />
-      <Button layoutX="7.0" layoutY="362.0" mnemonicParsing="false" text="Search" />
-      <Button layoutX="300.0" layoutY="362.0" mnemonicParsing="false" text="Search" />
-      <TextField layoutX="360.0" layoutY="362.0" prefHeight="26.0" prefWidth="196.0" promptText="Search by Item Name" />
-      <Button layoutX="-1.0" layoutY="40.0" mnemonicParsing="false" text="Load" />
-      <Button layoutX="562.0" layoutY="1.0" mnemonicParsing="false" text="Help" />
+      <TextField fx:id="serialNumberSearch" layoutX="64.0" layoutY="362.0" prefHeight="26.0" prefWidth="186.0" promptText="Search by Item Serial Number" />
+      <Button layoutX="7.0" layoutY="362.0" mnemonicParsing="false" onAction="#serialSearchButtonPressed" text="Search" />
+      <Button layoutX="300.0" layoutY="362.0" mnemonicParsing="false" onAction="#nameSearchButtonPressed" text="Search" />
+      <TextField fx:id="nameSearch" layoutX="360.0" layoutY="362.0" prefHeight="26.0" prefWidth="196.0" promptText="Search by Item Name" />
+      <Button layoutX="-1.0" layoutY="40.0" mnemonicParsing="false" onAction="#loadButtonPressed" text="Load" />
+      <Button layoutX="562.0" layoutY="1.0" mnemonicParsing="false" onAction="#helpButtonPressed" text="Help" />
    </children>
 </AnchorPane>
